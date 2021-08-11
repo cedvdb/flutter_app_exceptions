@@ -1,6 +1,6 @@
 # app_exceptions
 
-A dart exception with common exceptions found in a frontend application
+A dart library with common exceptions found in a frontend application
 
 ```dart
     expect(ex.AppException('', ''), isA<Exception>());
