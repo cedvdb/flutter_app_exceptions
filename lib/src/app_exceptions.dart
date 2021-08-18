@@ -6,6 +6,11 @@ class AppException implements Exception {
   /// human readable description of the problem that happened
   final String description;
   const AppException(this.title, this.description);
+
+  @override
+  String toString() {
+    return '${this.runtimeType}(title: $title, description: $description)';
+  }
 }
 
 /// thrown when a trying to use a service for which access is denied
@@ -62,7 +67,7 @@ class NotFoundException extends AppException {
 
 /// thrown when an action was cancelled before finishing
 class ActionCancelledException extends AppException {
-  ActionCancelledException(
-      {String description = 'Action was cancelled before being processed'})
-      : super('Action cancelled', description);
+  ActionCancelledException({
+    String description = 'Action was cancelled before being processed',
+  }) : super('Action cancelled', description);
 }
